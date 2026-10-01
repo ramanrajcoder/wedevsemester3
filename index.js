@@ -43,9 +43,18 @@
 
 // const process=require('process');
 
-require('dotenv').config();
-const process=require('process');   
-console.log(process.env,PORT);
-console.log(process.env.argv);
+// require('dotenv').config();
+// const process=require('process');   
+// console.log(process.env,PORT);
+// console.log(process.env.argv);
+const http = require('http');
 
+const PORT = process.env.PORT || 3000;
+
+http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello World\n');
+}).listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}/`);
+});
 
