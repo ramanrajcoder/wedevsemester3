@@ -21,13 +21,31 @@
 //     }
 // })
 
-const fs=require('fs/promises')
-async function readFile(){
-    try{
-        const data=await fs.readFile('file.txt','utf8');
-        console.log(data);
-    }    catch(err){
-        console.error('error reading line')
-    }
-}
-readFile();                                                                        
+// const fs=require('fs/promises')
+// async function readFile(){
+//     try{
+//         const data=await fs.readFile('file.txt','utf8');
+//         console.log(data);
+//     }    catch(err){
+//         console.error('error reading line')
+//     }
+// }
+// readFile()
+
+// const cr=require('crypto');
+// const secret='mysecret';
+// const hash=cr.createHmac('sha256',secret)
+// .update('hello world')
+// .digest('hex');
+// console .log(hash);
+
+// console.log(cr.randomInt());
+
+// const process=require('process');
+
+require('dotenv').config();
+const process=require('process');   
+console.log(process.env,PORT);
+console.log(process.env.argv);
+
+
